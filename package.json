@@ -1,5 +1,9 @@
 {
   "name": "Tiny",
   "version": "0.0.0",
-  "repository": "git@github.com:SFantasy/tiny.git"
+  "description": "Tiny gives you some mobile solutions",
+  "repository": "git@github.com:SFantasy/tiny.git",
+  "devDependencies": {
+    "gulp": "~3.8.10"
+  }
 }
