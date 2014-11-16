@@ -10,11 +10,12 @@
 
 var gulp = require('gulp');
 
-var concat = require('gulp-concat'),
+var coffee = require('gulp-coffee'),
+    concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     sass = require('gulp-ruby-sass');
 
-var path = {
+var paths = {
   scripts: 'src/coffee/*.coffee',
   sass: 'src/sass/*.sass',
   js: 'dist/js/*.js',
@@ -30,14 +31,14 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('sass', function () {
-  gulp.src(path.sass)
-    .pipe(sass({ style: 'compressed', noCache: true, sourcemap: true, sourcemapPath: '../sass' }))
+  gulp.src(paths.sass)
+    .pipe(sass({ style: 'compressed', noCache: true }))
     .on('error', function (err) { console.log(err.message); })
     .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('build', ['scripts', 'sass'], function () {
-  gulp.src(path.js)
+  gulp.src(paths.js)
     .pipe(uglify())
     .pipe(concat('tiny.min.js'))
     .pipe(gulp.dest('production'));
