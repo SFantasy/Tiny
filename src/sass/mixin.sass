@@ -6,5 +6,29 @@
  * @description 
  * @author fantasy
  * @create 2014-11-16
- * @update 2014-11-16
+ * @update 2014-11-19
  */
+
+@mixin transform ($transform)
+  -webkit-transform: $transform
+  -moz-transform: $transform
+  -o-transform: $transform
+  transform: $transform
+
+@mixin transition ($transition)
+  -webkit-transition: $transition
+  -moz-transition: $transition
+  -o-transition: $transition
+  transition: $transition
+
+@mixin animation ($animation)
+  -webkit-animation-direction: $animation
+  -moz-animation-direction: $animation
+  -o-animation-direction: $animation
+  animation-direction: $animation
+
+@mixin calc($property, $expression, $fallback)
+  #{$property}: $fallback
+  #{$property}: calc(#{$expression})
+  #{$property}: -wekbit-calc(#{$expression})
+  #{$property}: -moz-calc(#{$expression})
