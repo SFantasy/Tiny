@@ -33,7 +33,7 @@ gulp.task('scripts', function () {
 
 gulp.task('sass', function () {
   gulp.src(paths.sass)
-    .pipe(sass({ style: 'compressed', noCache: true }))
+    .pipe(sass({ style: 'compressed', noCache: true, 'sourcemap=none': true }))
     .on('error', function (err) { console.log(err.message); })
     .pipe(gulp.dest('dist/css'));
 });
