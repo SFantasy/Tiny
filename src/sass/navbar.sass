@@ -6,7 +6,32 @@
  * @description 
  * @author fantasy
  * @create 2014-11-21
- * @update 2014-11-21
+ * @update 2014-11-24
  */
 
 .t-nav
+  position: relative
+  background-color: $white
+  border-bottom: 1px solid $border-color
+  .nav-back, .nav-action
+    top: 0
+  .nav-back, .nav-action, .nav-title
+    line-height: 4.8rem
+    height: 4.8rem
+  .nav-back
+    position: absolute
+    left: 2rem
+    width: 40px
+    font-size: 3rem
+  .nav-title
+    text-align: center
+    font-size: 2.4rem
+  .nav-action
+    position: absolute
+    right: 2rem
+    color: $gray
+    font-size: 2rem
+  &.fixed
+    position: fixed
+    top: 0
+    left: 0
