@@ -39,7 +39,7 @@ gulp.task('sass', function () {
 });
 
 // Build files into production folder
-gulp.task('build', ['scripts'], function () {
+gulp.task('build', ['scripts', 'sass'], function () {
   gulp.src(paths.js)
     .pipe(uglify())
     .pipe(concat('tiny.min.js'))
@@ -53,7 +53,7 @@ gulp.task('build', ['scripts'], function () {
 });
 
 // Example
-gulp.task('eg', ['build'], function () {
+gulp.task('eg', function () {
   gulp.src('production/tiny.min.js')
     .pipe(gulp.dest('examples/js'));
 
@@ -67,5 +67,6 @@ gulp.task('watch', function () {
 });
 
 gulp.task('watch-eg', function () {
-  gulp.watch('src', ['eg']);
+  gulp.watch(paths.scripts, ['build', 'eg']);
+  gulp.watch(paths.sass, ['build', 'eg']);
 });
