@@ -7,6 +7,8 @@ Tiny solutions work for mobile
 
 This repository is built with Gulp and written in CoffeeScript and sass.
 
+Tiny should be using with [Zepto.js](http://zeptojs.com/) and [Fontawesome](http://fontawesome.io/).
+
 ## Build
 
 - Install dependencies

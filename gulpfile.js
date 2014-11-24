@@ -5,7 +5,7 @@
  * @description auto build JavaScript and Stylesheets for Tiny
  * @author Fantasy <fantasyshao@icloud.com>
  * @create 2014-11-14
- * @update 2014-11-21
+ * @update 2014-11-23
  */
 
 var gulp = require('gulp');
@@ -64,4 +64,8 @@ gulp.task('eg', ['build'], function () {
 gulp.task('watch', function () {
   gulp.watch(paths.scripts, ['scripts']);
   gulp.watch(paths.sass, ['sass']);
+});
+
+gulp.task('watch-eg', function () {
+  gulp.watch('src', ['eg']);
 });
