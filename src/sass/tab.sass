@@ -6,20 +6,21 @@
  * @description 
  * @author fantasy
  * @create 2014-11-21
- * @update 2014-11-25
+ * @update 2014-11-27
  */
 
-.t-tab-bottom
+[class^="t-tab-"]
   position: absolute
-  bottom: 0
   left: 0
   width: 100%
   font-size: 0
-  border-top: 1px solid $border-color
   .tab-item
     display: inline-block
     text-align: center
     padding: 0.5rem 0
+    &.active
+      a
+        color: $blue
     a
       display: inline-block
       width: 100%
@@ -29,4 +30,12 @@
     .item-name
       font-size: 1.4rem
 
+.t-tab-bottom
+  bottom: 0
+  border-top: 1px solid $border-color
 
+.t-tab-top
+  top: 0
+  border-bottom: 1px solid $border-color
+  .tab-item.active
+    border-bottom: 4px solid $blue

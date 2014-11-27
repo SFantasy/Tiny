@@ -53,7 +53,7 @@ gulp.task('build', ['scripts', 'sass'], function () {
 });
 
 // Example
-gulp.task('eg', function () {
+gulp.task('eg', ['build'], function () {
   gulp.src('production/tiny.min.js')
     .pipe(gulp.dest('examples/js'));
 
@@ -67,6 +67,6 @@ gulp.task('watch', function () {
 });
 
 gulp.task('watch-eg', function () {
-  gulp.watch(paths.scripts, ['build', 'eg']);
-  gulp.watch(paths.sass, ['build', 'eg']);
+  gulp.watch(paths.scripts, ['eg']);
+  gulp.watch(paths.sass, ['eg']);
 });
